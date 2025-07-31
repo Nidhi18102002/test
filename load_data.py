@@ -17,7 +17,7 @@ with open(r'C:\Users\siddh\OneDrive\Desktop\test\__MACOSX\archive\._products.csv
     reader = csv.reader(cleaned_file)
     header = next(reader)
     insert_query = f"INSERT INTO products2({', '.join(header)}) VALUES ({', '.join(['%s'] * len(header))})"
-    row
+    row_count = 0
     for row in reader:
         if len(row) == len(header):
             cursor.execute(insert_query, row)
