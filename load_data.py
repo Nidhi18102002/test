@@ -8,7 +8,7 @@ conn = mysql.connector.connect(
     host='localhost',
     user='root',
     password="",
-    database='ecommerce'
+    database='ecommerce2'
 )
 
 cursor = conn.cursor()
@@ -16,7 +16,7 @@ with open(r'C:\Users\siddh\OneDrive\Desktop\test\__MACOSX\archive\._products.csv
     cleaned_file = (line.replace('\00', '') for line in csvfile)
     reader = csv.reader(cleaned_file)
     header = next(reader)
-    insert_query = f"INSERT INTO products({', '.join(header)}) VALUES ({', '.join(['%s'] * len(header))})"
+    insert_query = f"INSERT INTO products2({', '.join(header)}) VALUES ({', '.join(['%s'] * len(header))})"
     row
     for row in reader:
         if len(row) == len(header):
